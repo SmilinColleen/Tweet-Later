@@ -1,0 +1,13 @@
+<div class='container'>
+  <h1>Success!</h1>
+
+  <% if @tweet %>
+
+    <h3>Here's your tweet!:</h3>
+
+    <%= @tweet %>
+
+  <% end %>
+
+  <p> <button><a href="/sign_out">Sign Out</a></button></p>
+</div>

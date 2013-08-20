@@ -9,16 +9,23 @@
   %>
   <% if @access_token %>
     <div>
-      <p>
+   <!--    <p>
         <strong>token:</strong> <%= @access_token.token %><br>
         <strong>secret:</strong> <%= @access_token.secret %><br>
-      </p>
+      </p> -->
+      <form action='/tweet' method='POST'>
+        <textarea row='20' col='30' name='tweet' placeholder='Tweet'></textarea>
+        <input type='submit' value='Tweet it!'>
+      </form>
       <p>
         <button><a href="/sign_out">Sign Out</a></button>
       </p>
     </div>
   <% else %>
-    <button><a href="/sign_in">Sign In with Twitter</a></button>
+    <form method='post' action='/sign_in'>
+      <input type='name' name='username'>
+      <input type='submit' value='Sign In with Twitter'>
+    </form>
   <% end %>
   
 </div>
