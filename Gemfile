@@ -18,6 +18,8 @@ gem 'shotgun'
 
 gem 'oauth'
 gem 'twitter'
+gem 'sidekiq'
+
 
 group :test do
   gem 'faker'

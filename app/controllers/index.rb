@@ -31,7 +31,8 @@ end
 
 post '/tweet' do
   @tweet = params[:tweet]
-  make_the_tweet(current_user, @tweet)
+  # make_the_tweet(current_user, @tweet)
+  TweetWorker.perform_async(current_user.id, @tweet)
   redirect "/tweet_success/#{@tweet}"
 end
 
